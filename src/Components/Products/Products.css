@@ -1,0 +1,28 @@
+#services h2{
+    border-bottom: 5px solid darkslateblue;
+}
+#services{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.service-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    background-color: #c5d5cb;
+    padding: 30px;
+    
+}
+
+/* responsive */
+@media only screen and (max-width:688px) {
+    .service-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media only screen and (min-width:689px) and (max-width: 991px){
+    .service-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
