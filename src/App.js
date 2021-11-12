@@ -7,10 +7,12 @@ import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import Register from './Components/Login/Register/Register';
 import Header from './Components/Home/Home/Header/Header';
 import Dashboard from './Components/DashBoard/DashBoard/DashBoard';
-import AddProducts from './Components/DashBoard/AddProducts/AddProducts';
+
 import MakeAdmin from './Components/DashBoard/MakeAdmin/MakeAdmin';
 import Explore from './Components/Explore/Explore';
 import Purchase from './Components/Purchase/Purchase';
+import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
+import MyOrder from './Components/DashBoard/MyOrder/MyOrder';
 
 function App() {
   return (
@@ -31,17 +33,17 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </Route>
-            <Route path="/addProducts">
-              <AddProducts></AddProducts>
-            </Route>
+            </PrivateRoute>
             <Route path="/explore">
               <Explore></Explore>
             </Route>
             <Route path="/purchase">
               <Purchase></Purchase>
+            </Route>
+            <Route path="/my">
+              <MyOrder></MyOrder>
             </Route>
             <Route>
               <MakeAdmin></MakeAdmin>

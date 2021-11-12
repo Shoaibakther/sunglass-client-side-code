@@ -11,7 +11,7 @@ const Header = () => {
         <div>
           <Navbar className="main-nav" variant="pills" defaultActiveKey="/home" fixed="top"  sticky="top" collapseOnSelect expand="lg">
     <Container>
-    <Navbar.Brand className="header text-danger" href="#home">Sunstore</Navbar.Brand>
+    <Navbar.Brand className="header text-danger" href="#home">Sunglass Store</Navbar.Brand>
      <Navbar.Toggle />
     <Navbar.Collapse className="justify-content-end" id="nav-item">
         <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
@@ -21,7 +21,7 @@ const Header = () => {
                         
                       
               {user?.email &&
-                 <Nav.Link as={HashLink} to="/">Dashboard</Nav.Link>
+                 <Nav.Link as={HashLink} to="/dashboard">Dashboard</Nav.Link>
               }
                
       {

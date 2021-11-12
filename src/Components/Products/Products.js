@@ -17,11 +17,11 @@ const Products = () => {
         data.email = (user.email);
         data.status = "Pending"
        
-        // fetch(`http://localhost:5000/addOrder`, {
-        //     method: "POST",
-        //     headers: { "content-type": "application/json" },
-        //     body: JSON.stringify(data)
-        // })
+        fetch(`http://localhost:5000/addOrder`, {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data)
+        })
     }
     return (
         <div id="services">

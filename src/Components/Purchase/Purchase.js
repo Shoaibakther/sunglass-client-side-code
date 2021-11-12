@@ -6,14 +6,14 @@ const Purchase = () => {
     const { serviceId } = useParams();
      const [service, setService] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${serviceId}`)
+      fetch(`http://localhost:5000/products/${serviceId}`)
         .then(res => res.json())
         .then(data => setService(data))
     },[])
     return (
         <div>
            
-         <h4>Engine name: {service.name}</h4>
+         <h4>Engine name: {service?.name}</h4>
          <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={service?.img} />
   <Card.Body>
