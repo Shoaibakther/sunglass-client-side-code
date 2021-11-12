@@ -15,6 +15,7 @@
 // import MenuIcon from '@mui/icons-material/Menu';
 // import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
+// import Grid from '@mui/material/Grid';
 // import {
 //     Switch,
 //     Route,
@@ -44,12 +45,12 @@
 //         <div>
 //             <Toolbar />
 //             <Divider />
-//             <Link to="/appointment"><Button color="inherit">Appointment</Button></Link>
+            
 //             <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
-//             {admin && <Box>
+            
 //                 <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
 //                 <Link to={`${url}/addProducts`}><Button color="inherit">Add Products</Button></Link>
-//             </Box>}
+           
 //             <List>
 //                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
 //                     <ListItem button key={text}>
@@ -129,12 +130,12 @@
 
 //                 <Switch>
                     
-//                     <AdminRoute path={`${path}/makeAdmin`}>
+//                     <Route path={`${path}/makeAdmin`}>
 //                         <MakeAdmin></MakeAdmin>
-//                     </AdminRoute>
-//                     <AdminRoute path={`${path}/addProducts`}>
+//                     </Route>
+//                     <Route path={`${path}/addProducts`}>
 //                         <AddProducts></AddProducts>
-//                     </AdminRoute>
+//                     </Route>
 //                 </Switch>
 
 //             </Box>
@@ -151,3 +152,4 @@
 // };
 
 // export default Dashboard;
+

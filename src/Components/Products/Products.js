@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './Products.css'
 
 const Products = () => {
-    const { user } = useAuth();
+    const { user,_id } = useAuth();
     const [services, setServices] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/products')
@@ -27,16 +28,18 @@ const Products = () => {
             <h2>Best Sunglass</h2>
             <div className="service-container">
                 {
-                    services.map((service, index)=> (
+                    services.map((service, index)  => (
+                        
                         <div>
-            <Card style={{ width: '18rem' }}>
+                            
+            <Card  style={{ width: '18rem' }}>
   <Card.Img variant="top" src={service?.img} />
   <Card.Body>
                     <Card.Title>{service?.name}</Card.Title>
     <Card.Text>
-      {service?.description.slice(0, 150)}
+      {service?.description.slice(0, 200)}
     </Card.Text>
-<button onClick={() =>handleAddToCart(index)} className="btn btn-warning">Order Now</button>
+<Link to={`/purchase/${service?._id}`}><button onClick={() =>handleAddToCart(index)} className="btn btn-warning">Order Now</button></Link>
   </Card.Body>
 </Card>
         </div>

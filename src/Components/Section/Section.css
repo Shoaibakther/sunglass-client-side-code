@@ -1,0 +1,16 @@
+.section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 93%;
+  
+    margin: 35px auto;
+  
+}
+.image img{
+    width: 100%;
+}
+.title{
+    width: 60%;
+    margin-top: 80px;
+    margin: auto;
+}

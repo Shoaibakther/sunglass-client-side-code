@@ -8,7 +8,9 @@ import Register from './Components/Login/Register/Register';
 import Header from './Components/Home/Home/Header/Header';
 import Dashboard from './Components/DashBoard/DashBoard/DashBoard';
 import AddProducts from './Components/DashBoard/AddProducts/AddProducts';
+import MakeAdmin from './Components/DashBoard/MakeAdmin/MakeAdmin';
 import Explore from './Components/Explore/Explore';
+import Purchase from './Components/Purchase/Purchase';
 
 function App() {
   return (
@@ -29,14 +31,20 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            {/* <Route path="/dashboard">
+            <Route path="/dashboard">
               <Dashboard></Dashboard>
-            </Route> */}
+            </Route>
             <Route path="/addProducts">
               <AddProducts></AddProducts>
             </Route>
             <Route path="/explore">
               <Explore></Explore>
+            </Route>
+            <Route path="/purchase">
+              <Purchase></Purchase>
+            </Route>
+            <Route>
+              <MakeAdmin></MakeAdmin>
             </Route>
       </Switch>
       </BrowserRouter>

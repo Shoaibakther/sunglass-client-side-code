@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 
 
+
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
@@ -23,6 +24,7 @@ const MakeAdmin = () => {
         })
             .then(res => res.json())
             .then(data => {
+                
                 if (data.modifiedCount) {
                     console.log(data);
                     setSuccess(true);
@@ -43,7 +45,7 @@ const MakeAdmin = () => {
                     variant="standard" />
                 <Button type="submit" variant="contained">Make Admin</Button>
             </form>
-            {success && <Alert severity="success">Made Admin successfully!</Alert>}
+            {success && <Alert severity="success">Make Admin successfully!</Alert>}
         </div>
     );
 };
