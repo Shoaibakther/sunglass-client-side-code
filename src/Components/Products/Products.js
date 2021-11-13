@@ -8,7 +8,7 @@ const Products = () => {
     const { user,_id } = useAuth();
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://stormy-badlands-58007.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setServices(data.slice(0,6)))
     }, [])
@@ -17,7 +17,7 @@ const Products = () => {
         data.email = (user.email);
         data.status = "Pending"
        
-        fetch(`http://localhost:5000/addOrder`, {
+        fetch(`https://stormy-badlands-58007.herokuapp.com/addOrder`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)
@@ -38,6 +38,9 @@ const Products = () => {
                     <Card.Title>{service?.name}</Card.Title>
     <Card.Text>
       {service?.description.slice(0, 200)}
+    </Card.Text>
+    <Card.Text>
+      <h4>TK: {service?.price}</h4>
     </Card.Text>
 <Link to={`/purchase/${service?._id}`}><button onClick={() =>handleAddToCart(index)} className="btn btn-warning">Order Now</button></Link>
   </Card.Body>

@@ -4,12 +4,10 @@ import { Container, Typography, TextField, Button, CircularProgress, Alert, Grid
 import { useHistory, useLocation } from 'react-router';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
-import logo from '../../../Images/logo/google-logo.png'
-import './Login.css'
+
 const Login = () => {
      const [loginData, setLoginData] = useState({});
     const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
-
     const location = useLocation();
     const history = useHistory();
 
@@ -35,6 +33,7 @@ const Login = () => {
                     <Typography variant="body1" gutterBottom>Login</Typography>
                     <form onSubmit={handleLoginSubmit}>
                         <TextField
+                            
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
                             label="Your Email"
@@ -42,6 +41,7 @@ const Login = () => {
                             onChange={handleOnChange}
                             variant="standard" />
                         <TextField
+                         
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
                             label="Your Password"

@@ -1,0 +1,15 @@
+.review{
+    width: 70%;
+    background-color: rgb(246, 250, 250);
+    margin: auto;
+}
+.review-info{
+    width: 70%;
+    margin: auto;
+      text-align: justify;
+   text-justify: inter-word;
+}
+.rating{
+    width: 35%;
+    margin: auto;
+}

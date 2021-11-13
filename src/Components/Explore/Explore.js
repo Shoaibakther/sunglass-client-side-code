@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Explore = () => {
     const { user } = useAuth();
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://stormy-badlands-58007.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setServices(data))
     }, [])
@@ -15,11 +16,11 @@ const Explore = () => {
         data.email = (user.email);
         data.status = "Pending"
        
-        // fetch(`http://localhost:5000/addOrder`, {
-        //     method: "POST",
-        //     headers: { "content-type": "application/json" },
-        //     body: JSON.stringify(data)
-        // })
+        fetch(`https://stormy-badlands-58007.herokuapp.com/addOrder`, {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data)
+        })
     }
     return (
         <div id="services">
@@ -33,9 +34,12 @@ const Explore = () => {
   <Card.Body>
                     <Card.Title>{service?.name}</Card.Title>
     <Card.Text>
-      {service?.description.slice(0, 150)}
+      {service?.description.slice(0, 250)}
+                                    </Card.Text>
+                                     <Card.Text>
+      <h4>TK: {service?.price}</h4>
     </Card.Text>
-<button onClick={() =>handleAddToCart(index)} className="btn btn-warning">Order Now</button>
+<Link to={`/purchase/${service?._id}`}><button onClick={() =>handleAddToCart(index)} className="btn btn-warning">Order Now</button></Link>
   </Card.Body>
 </Card>
         </div>

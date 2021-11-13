@@ -1,0 +1,23 @@
+.add-service h1{
+    color: rgb(52, 83, 12);
+    border-bottom: 5px solid rgb(181, 132, 185);
+    margin: 20px;
+}
+.add-service form{
+    width: 60%;
+    margin: auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+   background-color:darkgray;
+    justify-content: center;
+    align-items: center;
+}
+.add-service form input{
+    padding: 5px;
+     width: 90%;
+     margin-bottom: 10px;
+     border-bottom: none;
+     border: 1px solid brown;
+     border-radius: 5px;
+}

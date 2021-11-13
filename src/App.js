@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Components/Home/Home/Home';
-import Login from './Components/Login/Login/Login';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
-import Register from './Components/Login/Register/Register';
-import Header from './Components/Home/Home/Header/Header';
 import Dashboard from './Components/DashBoard/DashBoard/DashBoard';
-
-import MakeAdmin from './Components/DashBoard/MakeAdmin/MakeAdmin';
-import Explore from './Components/Explore/Explore';
-import Purchase from './Components/Purchase/Purchase';
+import NotFound from './Components/NotFound/NotFound';
 import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
 import MyOrder from './Components/DashBoard/MyOrder/MyOrder';
+import Review from './Components/DashBoard/Review/Review';
+import MainLogin from './Components/Login/MainLogin/MainLogin';
+import MainExplore from './Components/Explore/MainExplore/MainExplore';
+import MainRegister from './Components/Login/Register/MainRegister/MainRegister';
+import Pay from './Components/DashBoard/Pay/Pay';
+import MainPurchase from './Components/Purchase/MainPurchase/MainPurchase';
+import ManageOrders from './Components/DashBoard/ManageAllOrders/ManageOrders';
+import ManageProducts from './Components/DashBoard/ManageProducts/ManageProducts';
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
-          <Header></Header>
         <Switch>
           <Route exact path="/">
             <Home></Home>
@@ -28,25 +29,28 @@ function App() {
             <Home></Home>
           </Route>
           <Route path="/login">
-            <Login></Login>
+            <MainLogin></MainLogin>
             </Route>
             <Route path="/register">
-              <Register></Register>
+            <MainRegister></MainRegister>
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
             <Route path="/explore">
-              <Explore></Explore>
+              <MainExplore></MainExplore>
             </Route>
-            <Route path="/purchase">
-              <Purchase></Purchase>
+            <PrivateRoute path="/pay">
+              <Pay></Pay>
+           </PrivateRoute>
+            <PrivateRoute path="/purchase/:serviceId">
+              <MainPurchase></MainPurchase>
+            </PrivateRoute>
+            <Route path="/orders">
+              <ManageOrders></ManageOrders>
             </Route>
-            <Route path="/my">
-              <MyOrder></MyOrder>
-            </Route>
-            <Route>
-              <MakeAdmin></MakeAdmin>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
       </Switch>
       </BrowserRouter>

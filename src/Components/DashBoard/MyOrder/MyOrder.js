@@ -13,14 +13,14 @@ const MyOrder = () => {
 
     
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${email}`)
+        fetch(`https://stormy-badlands-58007.herokuapp.com/myOrders/${email}`)
         .then(res =>res.json())
         .then(data => setOrders(data))
     }, [])
     
     
      const handleDelete = id => {
-        const url = `http://localhost:5000/myOrders/${id}`
+        const url = `https://stormy-badlands-58007.herokuapp.com/myOrders/${id}`
         fetch(url, {
             method: 'DELETE'
         })

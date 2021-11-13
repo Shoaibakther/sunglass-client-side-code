@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import './AddProducts.css';
 
 const AddProducts = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
-      axios.post('http://localhost:5000/products', data)
+      axios.post('https://stormy-badlands-58007.herokuapp.com/products', data)
           .then(res => {
               if (res.data.insertedId) {
                   alert("Added Successfully")
@@ -22,7 +23,8 @@ const AddProducts = () => {
       placeholder="Name:"          />
       <input {...register("description", )} placeholder="Description"/>
                
-                <input {...register("img", )} placeholder="Img Link" />
+        <input {...register("img",)} placeholder="Img Link" />
+        <input type="number" {...register("price", { min: 0, max: 10000 })} placeholder="Products Price" />
       <input type="submit" />
     </form>
         </div>
