@@ -8,7 +8,7 @@ const Products = () => {
     const { user,_id } = useAuth();
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('https://stormy-badlands-58007.herokuapp.com/products')
+        fetch('https://sheltered-escarpment-17435.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setServices(data.slice(0,6)))
     }, [])
@@ -17,7 +17,7 @@ const Products = () => {
         data.email = (user.email);
         data.status = "Pending"
        
-        fetch(`https://stormy-badlands-58007.herokuapp.com/addOrder`, {
+        fetch(`https://sheltered-escarpment-17435.herokuapp.com/addOrder`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)

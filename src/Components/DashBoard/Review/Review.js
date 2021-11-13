@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 const Review = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
-      axios.post('https://stormy-badlands-58007.herokuapp.com/review', data)
+      axios.post('https://sheltered-escarpment-17435.herokuapp.com/review', data)
           .then(res => {
               if (res.data.insertedId) {
                   alert("Added Successfully")

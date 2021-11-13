@@ -6,12 +6,12 @@ import './ManageProducts.css';
 const ManageProducts = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('https://stormy-badlands-58007.herokuapp.com/products')
+        fetch('https://sheltered-escarpment-17435.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
     const handleDelete = id => {
-        const url = `https://stormy-badlands-58007.herokuapp.com/products/${id}`
+        const url = `https://sheltered-escarpment-17435.herokuapp.com/products/${id}`
         fetch(url, {
             method: 'DELETE'
         })

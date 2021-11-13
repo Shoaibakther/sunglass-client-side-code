@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 const ManageOrders = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('https://stormy-badlands-58007.herokuapp.com/orders')
+        fetch('https://sheltered-escarpment-17435.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setServices(data))
     }, [])

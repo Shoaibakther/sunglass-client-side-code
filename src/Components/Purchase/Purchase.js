@@ -11,7 +11,7 @@ const Purchase = () => {
   const { serviceId } = useParams();
      const [service, setService] = useState({})
     useEffect(() => {
-      fetch(`https://stormy-badlands-58007.herokuapp.com/products/${serviceId}`)
+      fetch(`https://sheltered-escarpment-17435.herokuapp.com/products/${serviceId}`)
         .then(res => res.json())
         .then(data => setService(data))
     }, [])

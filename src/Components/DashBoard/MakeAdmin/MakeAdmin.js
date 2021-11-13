@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://stormy-badlands-58007.herokuapp.com/users/admin', {
+        fetch('https://sheltered-escarpment-17435.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
